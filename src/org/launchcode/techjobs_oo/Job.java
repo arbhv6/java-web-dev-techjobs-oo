@@ -94,4 +94,29 @@ public class Job {
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        String localCoreComp = coreCompetency.getValue();
+        if(coreCompetency.getValue() == "" || coreCompetency.getValue() == null){
+            localCoreComp = "Data not available";
+        }
+        String returnString = "\n" +
+                "ID: " + id +
+                "\nName: '" + name + '\'' +
+                "\nEmployer: " + employer +
+                "\nLocation: " + location +
+                "\nPosition Type: " + positionType +
+                "\nCore Competency: " + localCoreComp + "\n";
+        return returnString;
+    }
+
+//    public String toString() {
+//        return "\nID=" + id +
+//                "\nName: '" + name + '\'' + "\n" +
+//                "\nEmployer: " + employer +
+//                "\nLocation: " + location +
+//                "\nPosition Type: " + positionType +
+//                "\nCore Competency: " + coreCompetency + "\n";
+//    }
 }

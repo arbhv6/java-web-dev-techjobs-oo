@@ -7,10 +7,11 @@ import org.launchcode.techjobs_oo.*;
 import static org.junit.Assert.*;
 
 public class JobTest {
-    Job testJob1;
-    Job testJob2;
-    Job testJob3;
-    Job testJob4;
+    Job testJob1; //only ID
+    Job testJob2; //only ID
+    Job testJob3; //full constructor used
+    Job testJob4; //full constructor used
+    Job testJob5; //core competency left blank
 
     @Before
     public void createTwoJobs(){
@@ -18,6 +19,7 @@ public class JobTest {
         testJob2 = new Job();
         testJob3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         testJob4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        testJob5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
     }
 
     @Test
@@ -42,6 +44,33 @@ public class JobTest {
     @Test
     public void testJobsForEquality() {
         assertFalse(testJob3.equals(testJob4));
+    }
+
+    @Test
+    public void testToStringFirstTest() {
+        assertTrue(testJob3.toString().endsWith("\n") && testJob3.toString().startsWith("\n"));
+    }
+
+    @Test
+    public void testToStringSecondTest() {
+        assertTrue(testJob3.toString().contains("ID: " + testJob3.getId() +
+                "\nName: '" + testJob3.getName() + '\'' +
+                "\nEmployer: " + testJob3.getEmployer().getValue() +
+                "\nLocation: " + testJob3.getLocation().getValue() +
+                "\nPosition Type: " + testJob3.getPositionType().getValue() +
+                "\nCore Competency: " + testJob3.getCoreCompetency().getValue()
+        ));
+    }
+
+    @Test
+    public void testToStringThirdTest() {
+        assertTrue(testJob5.toString().contains("ID: " + testJob5.getId() +
+                "\nName: '" + testJob5.getName() + '\'' +
+                "\nEmployer: " + testJob5.getEmployer().getValue() +
+                "\nLocation: " + testJob5.getLocation().getValue() +
+                "\nPosition Type: " + testJob5.getPositionType().getValue() +
+                "\nCore Competency: " + "Data not available"
+        ));
     }
 
 //    public static void main(String[] args) {
