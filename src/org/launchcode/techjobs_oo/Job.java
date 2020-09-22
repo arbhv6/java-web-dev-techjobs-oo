@@ -98,15 +98,33 @@ public class Job {
     @Override
     public String toString() {
         String localCoreComp = coreCompetency.getValue();
+        String localEmployer = employer.getValue();
+        String localName = name;
+        String localLocation = location.getValue();
+        String localPositionType = positionType.getValue();
+
         if(coreCompetency.getValue() == "" || coreCompetency.getValue() == null){
             localCoreComp = "Data not available";
         }
+        if(employer.getValue() == "" || employer.getValue() == null){
+            localEmployer = "Data not available";
+        }
+        if(name == "" || name == null){
+            localName = "Data not available";
+        }
+        if(location.getValue() == "" || location.getValue() == null){
+            localLocation = "Data not available";
+        }
+        if(positionType.getValue() == "" || positionType.getValue() == null){
+            localPositionType = "Data not available";
+        }
+
         String returnString = "\n" +
                 "ID: " + id +
-                "\nName: '" + name + '\'' +
-                "\nEmployer: " + employer +
-                "\nLocation: " + location +
-                "\nPosition Type: " + positionType +
+                "\nName: '" + localName + '\'' +
+                "\nEmployer: " + localEmployer +
+                "\nLocation: " + localLocation +
+                "\nPosition Type: " + localPositionType +
                 "\nCore Competency: " + localCoreComp + "\n";
         return returnString;
     }
