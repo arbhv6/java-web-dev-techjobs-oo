@@ -54,7 +54,7 @@ public class JobTest {
     @Test
     public void testToStringSecondTest() {
         assertTrue(testJob3.toString().contains("ID: " + testJob3.getId() +
-                "\nName: '" + testJob3.getName() + '\'' +
+                "\nName: " + testJob3.getName() +
                 "\nEmployer: " + testJob3.getEmployer().getValue() +
                 "\nLocation: " + testJob3.getLocation().getValue() +
                 "\nPosition Type: " + testJob3.getPositionType().getValue() +
@@ -65,7 +65,7 @@ public class JobTest {
     @Test
     public void testToStringThirdTest() {
         assertTrue(testJob5.toString().contains("ID: " + testJob5.getId() +
-                "\nName: '" + testJob5.getName() + '\'' +
+                "\nName: " + testJob5.getName() +
                 "\nEmployer: " + testJob5.getEmployer().getValue() +
                 "\nLocation: " + testJob5.getLocation().getValue() +
                 "\nPosition Type: " + testJob5.getPositionType().getValue() +
