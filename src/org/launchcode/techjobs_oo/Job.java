@@ -121,7 +121,7 @@ public class Job {
 
         String returnString = "\n" +
                 "ID: " + id +
-                "\nName: '" + localName + '\'' +
+                "\nName: " + localName +
                 "\nEmployer: " + localEmployer +
                 "\nLocation: " + localLocation +
                 "\nPosition Type: " + localPositionType +
